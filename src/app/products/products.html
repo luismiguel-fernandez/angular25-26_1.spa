@@ -1,1 +1,21 @@
 <p>products works!</p>
+  <table>
+    <thead>
+        <tr>
+            <th>Fabricante</th>
+            <th>Modelo</th>
+            <th (click)="ordenarPorPrecio()">Precio</th>
+            <th>Tipo Motor</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (coche of getCoches(); track coche.id ) {
+            <tr >
+                <td>{{coche.fabricante}}</td>
+                <td>{{coche.modelo}}</td>
+                <td>{{coche.precio}}</td>
+                <td>{{coche.tipoMotor}}</td>
+            </tr>
+        }
+    </tbody>
+</table>
