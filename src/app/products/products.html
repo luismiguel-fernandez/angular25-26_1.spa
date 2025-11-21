@@ -1,5 +1,8 @@
-<p>products works!</p>
-  <table>
+<button (click)="setViewMode('table')" class="btn btn-warning">Vista tabla</button>
+<button (click)="setViewMode('grid')" class="btn btn-warning">Vista tarjetas</button>
+
+@if (viewMode === 'table') {
+    <table class="table">
     <thead>
         <tr>
             <th>Fabricante</th>
@@ -18,4 +21,11 @@
             </tr>
         }
     </tbody>
-</table>
+    </table>
+} @else {
+    <div class="row row-cols-md-5">
+        @for (coche of getCoches(); track coche.id ) {
+            <app-product-card [oneCar]="coche" />
+        }
+    </div>
+}

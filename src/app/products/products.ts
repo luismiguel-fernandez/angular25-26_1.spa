@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { ProductCard } from '../product-card/product-card';
 
 @Component({
   selector: 'app-products',
-  imports: [],
+  imports: [ProductCard],
   templateUrl: './products.html',
   styles: ``,
 })
@@ -149,6 +150,7 @@ export class Products {
       tipoMotor: "Diésel"
     }
   ];
+  viewMode: string = "table"
   
   getCoches() {
     return this.inventarioCoches
@@ -156,6 +158,10 @@ export class Products {
 
   ordenarPorPrecio() {
     this.inventarioCoches.sort((a, b) => a.precio - b.precio);
+  }
+
+  setViewMode(newViewMode: string) {
+    this.viewMode = newViewMode;
   }
 
 }
