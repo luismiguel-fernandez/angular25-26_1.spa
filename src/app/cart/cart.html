@@ -1,1 +1,5 @@
-<p>cart works!</p>
+<ul>
+    @for (favCar of getGarage(); track favCar.id) {
+        <li>{{favCar.modelo}}</li>
+    }
+</ul>

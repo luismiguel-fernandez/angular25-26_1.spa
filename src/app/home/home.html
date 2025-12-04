@@ -1,5 +1,27 @@
 <p>home works!</p>
-
 <h1>{{title}}</h1>
-
 <button (click)="traducir()" class="btn btn-outline-warning">Traduce el título</button>
+
+<br />
+<br />
+
+<input type="text" [(ngModel)]="usuario1" />
+
+@if (usuario1.length) {
+    <h5>Hola, {{usuario1}}</h5>
+} @else {
+    <h5>Hola, anónimo</h5>
+}
+
+<br />
+<br />
+
+<input type="text" #username />
+<button (click)="login(username.value)" class="btn btn-outline-warning">iniciar sesión</button>
+
+@if (usuario2.length) {
+    <h5>Hola, {{usuario2}}</h5>
+} @else {
+    <h5>Hola, anónimo</h5>
+}
+
